@@ -1,0 +1,5 @@
+package com.Orderofproduct.dao;
+
+public class OfferDao {
+
+}

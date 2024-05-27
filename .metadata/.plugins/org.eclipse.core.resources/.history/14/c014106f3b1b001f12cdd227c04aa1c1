@@ -1,0 +1,5 @@
+package com.ElectronicsManagementSystempayment.dao.copy;
+
+public class PaymentDAO {
+
+}

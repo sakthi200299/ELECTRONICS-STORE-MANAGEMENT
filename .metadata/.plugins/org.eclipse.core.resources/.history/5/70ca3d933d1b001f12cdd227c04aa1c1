@@ -1,0 +1,5 @@
+package com.Orderofproduct.entity;
+
+public class PaymentDTO {
+
+}

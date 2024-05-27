@@ -1,0 +1,5 @@
+package com.ElectronicsManagementSystempayment.service.copy;
+
+public class PaymentService {
+
+}

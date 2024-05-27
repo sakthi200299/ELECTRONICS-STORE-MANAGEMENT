@@ -1,0 +1,5 @@
+package com.ElectronicsManagementSystempayment.repository.copy;
+
+public interface PaymentRepository {
+
+}

@@ -1,0 +1,25 @@
+package com.springboot.gateway;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.cloud.gateway.route.RouteLocator;
+import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
+@CrossOrigin(origins="http://127.0.0.1:5500")
+@Configuration
+public class GatewayConfig {
+
+    @Bean
+    public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
+        return builder.routes()
+            .route("customer-service", r -> r.path("/customer/**")
+                .uri("http://localhost:8091"))
+            .route("product-service", r -> r.path("/product/**")
+               .uri("http://localhost:8092"))
+            .route("order-service", r -> r.path("/orders/**")
+                    .uri("http://localhost:8096"))
+            .build();
+        
+            
+    }
+}

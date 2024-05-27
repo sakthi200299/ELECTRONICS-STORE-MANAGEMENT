@@ -1,0 +1,5 @@
+package com.ElectronicsManagementSystem.entity.copy;
+
+public class Order {
+
+}

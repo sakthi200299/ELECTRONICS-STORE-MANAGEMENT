@@ -1,0 +1,5 @@
+package com.ElectronicsManagementSystempayment.entity;
+
+public class Payment {
+
+}

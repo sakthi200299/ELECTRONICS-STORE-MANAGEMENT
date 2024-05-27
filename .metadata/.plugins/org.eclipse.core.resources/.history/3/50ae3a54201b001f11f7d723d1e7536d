@@ -1,0 +1,5 @@
+package com.ElectronicsManagementSystem.entity;
+
+public class Order {
+
+}

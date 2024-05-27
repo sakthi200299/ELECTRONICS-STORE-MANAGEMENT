@@ -1,0 +1,5 @@
+package com.ElectronicsManagementSystem.respository.copy;
+
+public interface OrderRespository {
+
+}

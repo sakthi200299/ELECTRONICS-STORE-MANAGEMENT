@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const orderId = params.get('orderId');
+            const customerName = params.get('customerName');
+            const amount = params.get('amount');
+
+            if (orderId) {
+                // Implement payment logic here
+                const paymentData = {
+                    customerName: customerName,
+                    amount: parseInt(amount),
+                    paymentStatus: false,
+                    orderId: parseInt(orderId)
+                };
+
+                fetch('http://localhost:8356/payments/add', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(paymentData)
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Payment failed. Server responded with status: ' + response.status);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.paymentStatus) {
+                        alert('Payment successful');
+                        // Optionally, redirect to another page or update the UI
+                    } else {
+                        alert('Payment failed. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    alert('Payment failed. Please try again later.');
+                });
+            } else {
+                alert('Missing order ID, customer name, or amount.');
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>Processing Payment...</h1>
+</body>
+</html>
